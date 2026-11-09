@@ -1,0 +1,667 @@
+:root {
+  --superadmin-sidebar: #123f52;
+  --superadmin-sidebar-hover: #285568;
+  --superadmin-accent: #0e8177;
+  --superadmin-background: #f4f7f7;
+  --superadmin-border: #e2e9eb;
+  --superadmin-text: #173e51;
+}
+
+.superadmin-layout {
+  min-height: 100vh;
+  background: var(--superadmin-background);
+}
+
+.superadmin-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  padding: 28px 20px 20px;
+  color: #fff;
+  background: var(--superadmin-sidebar);
+  transition: transform 0.25s ease;
+}
+
+.superadmin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 10px 52px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.superadmin-brand-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--superadmin-sidebar);
+  background: #d8f5ec;
+  font-size: 25px;
+}
+
+.superadmin-brand-light {
+  color: #a5e2d3;
+  font-weight: 400;
+}
+
+.superadmin-nav-heading {
+  margin: 0 10px 17px;
+  color: #9bb9c4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.superadmin-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.superadmin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 49px;
+  padding: 0 13px;
+  border-radius: 10px;
+  color: #e2edf0;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.superadmin-nav-link:hover,
+.superadmin-nav-link.active {
+  color: #fff;
+  background: var(--superadmin-sidebar-hover);
+}
+
+.superadmin-nav-link.active {
+  box-shadow: inset 3px 0 #9ee1d2;
+}
+
+.superadmin-nav-icon {
+  display: inline-flex;
+  width: 17px;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.superadmin-sidebar-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.superadmin-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.superadmin-avatar {
+  display: grid;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  color: #fff;
+  background: #285568;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.superadmin-profile-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.superadmin-profile-info strong {
+  font-size: 13px;
+}
+
+.superadmin-profile-info span {
+  color: #a8c3cd;
+  font-size: 12px;
+}
+
+.superadmin-logout {
+  border: 0;
+  color: #d9edf0;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.superadmin-logout:hover {
+  color: #fff;
+}
+
+.superadmin-main {
+  min-height: 100vh;
+  margin-left: 280px;
+}
+
+.superadmin-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  min-height: 116px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 36px;
+  border-bottom: 1px solid var(--superadmin-border);
+  background: #f8fafa;
+}
+
+.superadmin-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.superadmin-breadcrumb {
+  margin-bottom: 11px;
+  color: var(--superadmin-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.superadmin-header h1 {
+  margin: 0;
+  color: var(--superadmin-text);
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.superadmin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.superadmin-role-badge {
+  padding: 10px 16px;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 25px;
+  color: var(--superadmin-accent);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.superadmin-refresh-button {
+  padding: 11px 15px;
+  border: 1px solid #d7e2e5;
+  border-radius: 9px;
+  color: var(--superadmin-text);
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.superadmin-refresh-button:hover {
+  background: #edf5f4;
+}
+
+.superadmin-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 36px 50px;
+}
+
+.superadmin-menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 8px;
+  color: var(--superadmin-text);
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.superadmin-overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .superadmin-sidebar {
+    width: 250px;
+  }
+
+  .superadmin-main {
+    margin-left: 250px;
+  }
+
+  .superadmin-header {
+    padding: 18px 24px;
+  }
+
+  .superadmin-content {
+    padding: 25px 24px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .superadmin-sidebar {
+    width: 280px;
+    transform: translateX(-100%);
+  }
+
+  .superadmin-sidebar.superadmin-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .superadmin-main {
+    margin-left: 0;
+  }
+
+  .superadmin-header {
+    min-height: 85px;
+    padding: 14px 16px;
+  }
+
+  .superadmin-menu-button {
+    display: inline-grid;
+    flex-shrink: 0;
+    place-items: center;
+  }
+
+  .superadmin-header h1 {
+    font-size: 21px;
+  }
+
+  .superadmin-breadcrumb {
+    margin-bottom: 6px;
+    font-size: 10px;
+  }
+
+  .superadmin-role-badge {
+    display: none;
+  }
+
+  .superadmin-content {
+    padding: 20px 16px 35px;
+  }
+
+  .superadmin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (max-width: 420px) {
+  .superadmin-header h1 {
+    font-size: 18px;
+  }
+
+  .superadmin-header {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .superadmin-header-actions {
+    gap: 5px;
+  }
+
+  .superadmin-refresh-button {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .superadmin-refresh-button span {
+    display: none;
+  }
+
+  .superadmin-content {
+    padding: 16px 12px 30px;
+  }
+}
+
+/* Student Directory Table */
+
+.superadmin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 16px;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.superadmin-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.superadmin-table thead {
+  background: #f1f6f7;
+}
+
+.superadmin-table th {
+  padding: 15px 18px;
+  color: #365568;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--superadmin-border);
+}
+
+.superadmin-table td {
+  padding: 15px 18px;
+  color: #334e60;
+  font-size: 14px;
+  border-bottom: 1px solid #edf1f3;
+  white-space: nowrap;
+}
+
+.superadmin-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.superadmin-table tbody tr:hover {
+  background: #f7fbfb;
+}
+
+.superadmin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.superadmin-table .student-name {
+  color: #173e51;
+  font-weight: 600;
+}
+
+.superadmin-table .school-code {
+  color: #0e8177;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.superadmin-table .empty-value {
+  color: #94a3b8;
+}
+
+/* School Directory Table */
+
+.superadmin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 16px;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.superadmin-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.superadmin-table thead {
+  background: #f1f6f7;
+}
+
+.superadmin-table th {
+  padding: 15px 18px;
+  color: #365568;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--superadmin-border);
+}
+
+.superadmin-table td {
+  padding: 14px 18px;
+  color: #334e60;
+  font-size: 14px;
+  white-space: nowrap;
+  border-bottom: 1px solid #edf1f3;
+}
+
+.superadmin-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.superadmin-table tbody tr:hover {
+  background: #f7fbfb;
+}
+
+.superadmin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.superadmin-table .school-name {
+  color: #173e51;
+  font-weight: 600;
+}
+
+.superadmin-table .school-code {
+  color: #0e8177;
+  font-weight: 600;
+}
+
+.superadmin-table .table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.superadmin-table .table-action-btn {
+  padding: 8px 13px;
+  border: 1px solid #d5e0e7;
+  border-radius: 8px;
+  background: #fff;
+  color: #173e51;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.superadmin-table .table-action-btn:hover {
+  background: #edf7f6;
+  border-color: #0e8177;
+  color: #0e8177;
+}
+
+.superadmin-table .table-action-danger {
+  color: #dc4c4c;
+  border-color: #f0cccc;
+}
+
+.superadmin-table .table-action-danger:hover {
+  background: #fff1f1;
+  border-color: #dc4c4c;
+  color: #c53030;
+}
+
+.superadmin-table .school-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e8f7ef;
+  color: #16834a;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.superadmin-table .school-status.inactive {
+  background: #fff0e8;
+  color: #c65d27;
+}
+
+/* AI Usage Summary Cards */
+
+.superadmin-usage-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.superadmin-usage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+
+.superadmin-usage-card-label {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.superadmin-usage-card-value {
+  color: #173e51;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* AI Usage Sections */
+
+.superadmin-usage-section {
+  background: #ffffff;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.superadmin-usage-section h2 {
+  color: #173e51;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+/* AI Usage Tables */
+
+.superadmin-usage-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--superadmin-border);
+  border-radius: 10px;
+}
+
+.superadmin-usage-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.superadmin-usage-table thead {
+  background: #f1f6f7;
+}
+
+.superadmin-usage-table th {
+  padding: 15px 18px;
+  color: #365568;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--superadmin-border);
+}
+
+.superadmin-usage-table td {
+  padding: 14px 18px;
+  color: #334e60;
+  font-size: 14px;
+  border-bottom: 1px solid #edf1f3;
+  white-space: nowrap;
+}
+
+.superadmin-usage-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.superadmin-usage-table tbody tr:hover {
+  background: #f7fbfb;
+}
+
+.superadmin-usage-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.superadmin-usage-table .usage-school-name {
+  color: #173e51;
+  font-weight: 600;
+}
+
+.superadmin-usage-table .usage-school-code {
+  color: #0e8177;
+  font-weight: 600;
+}
+
+.superadmin-usage-table .usage-feature {
+  color: #365568;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.superadmin-usage-table .usage-number {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.superadmin-usage-empty {
+  padding: 24px !important;
+  text-align: center;
+  color: #94a3b8 !important;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .superadmin-usage-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .superadmin-usage-section {
+    padding: 16px;
+  }
+
+  .superadmin-usage-card {
+    padding: 18px;
+  }
+}

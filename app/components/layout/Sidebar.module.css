@@ -1,0 +1,234 @@
+
+/* =========================================
+   EduRise Sidebar
+========================================= */
+
+.dashboardSidebar {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px 18px;
+  overflow-y: auto;
+  background: #123d52;
+  color: #e8f2f3;
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.brand > span:last-child > span {
+  color: #a8dfcb;
+  font-weight: 500;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #d8f3e8;
+  color: #123d52;
+}
+
+/* Navigation */
+
+.sidebarLabel {
+  margin: 48px 10px 13px;
+  color: #91b2bd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 42px;
+  padding: 12px 13px;
+  border-radius: 8px;
+  color: #c4d8df;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.link:hover {
+  background: #ffffff14;
+  color: #fff;
+}
+
+.active {
+  background: #ffffff19;
+  color: #fff;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.comingSoon {
+  margin-left: auto;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #ffffff14;
+  color: #a9c1c9;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* User Profile */
+
+.sidebarBottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 14px 5px 2px;
+  border-top: 1px solid #ffffff25;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d8f3e8;
+  color: #123d52;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.userMeta {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.userMeta strong {
+  overflow: hidden;
+  color: #fff;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userMeta span {
+  color: #a9c1c9;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.logoutButton {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #d8e7eb;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background: #ffffff19;
+  color: #fff;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .dashboardSidebar {
+    width: 210px;
+    min-width: 210px;
+    padding: 22px 12px 16px;
+  }
+
+  .link {
+    padding: 11px 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .dashboardSidebar {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: auto;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  .brand {
+    margin-bottom: 18px;
+  }
+
+  .sidebarLabel {
+    margin: 10px 5px;
+  }
+
+  .navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .link {
+    width: auto;
+    min-height: 38px;
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .sidebarBottom {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+}

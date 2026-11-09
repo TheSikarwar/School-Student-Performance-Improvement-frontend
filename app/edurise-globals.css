@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #18313b;
+  --edurise-navy: #123d52;
+  --edurise-teal: #176b60;
+  --edurise-mint: #d8f3e8;
+  --edurise-muted: #71808b;
+  --edurise-border: #d7e1e3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+
+/* EduRise login page */
+.edurise-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  color: var(--foreground);
+  background: #fff;
+}
+
+.edurise-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px clamp(28px, 6vw, 84px);
+  color: #fff;
+  background: var(--edurise-navy);
+}
+
+.edurise-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.edurise-logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--edurise-mint);
+  color: var(--edurise-navy);
+}
+
+.edurise-logo svg { display: block; width: 29px; height: 29px; }
+.edurise-brand-light { color: #a8dfcb; font-weight: 450; }
+
+.edurise-hero {
+  max-width: 500px;
+  margin: 70px 0;
+}
+
+.edurise-eyebrow {
+  color: #278575;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.edurise-intro .edurise-eyebrow { color: #a8dfcb; }
+
+.edurise-hero h1 {
+  margin: 22px 0;
+  font-size: clamp(38px, 4.2vw, 59px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.edurise-hero h1 span { color: #a8dfcb; }
+
+.edurise-hero > p {
+  max-width: 420px;
+  color: #d0e0e7;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.edurise-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.edurise-benefit > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--edurise-mint);
+  color: var(--edurise-navy);
+  font-weight: 800;
+}
+
+.edurise-benefit strong { font-size: 14px; }
+
+.edurise-benefit p {
+  margin: 5px 0 0;
+  color: #c5d9e0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.edurise-footer { margin: 0; color: #c5d9e0; font-size: 12px; }
+
+.edurise-login-area {
+  display: grid;
+  place-items: center;
+  padding: 44px 28px;
+}
+
+.edurise-login-card { width: 100%; max-width: 420px; }
+
+.edurise-login-card h2 {
+  margin: 12px 0 8px;
+  color: var(--foreground);
+  font-size: 31px;
+  letter-spacing: -1px;
+}
+
+.edurise-subtitle {
+  margin: 0 0 27px;
+  color: var(--edurise-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.edurise-mobile-brand {
+  display: none;
+  margin-bottom: 34px;
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+.edurise-mobile-brand span { color: #278575; }
+
+.edurise-tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 5px;
+  padding: 5px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background: #f0f5f4;
+}
+
+.edurise-tabs button {
+  min-width: 0;
+  padding: 12px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--edurise-muted);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.edurise-tabs button.selected {
+  background: #fff;
+  color: var(--edurise-teal);
+  box-shadow: 0 1px 5px #123d5212;
+}
+
+.edurise-form { display: flex; flex-direction: column; gap: 19px; }
+
+.edurise-field { display: flex; flex-direction: column; gap: 9px; }
+
+.edurise-field label,
+.edurise-password-label label {
+  color: #344c56;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.edurise-field input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--edurise-border);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.edurise-field input:focus {
+  border-color: #278575;
+  box-shadow: 0 0 0 3px #2785751a;
+}
+
+.edurise-field input::placeholder { color: #9baab0; }
+
+.edurise-password-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.edurise-password-label a {
+  color: var(--edurise-teal);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.edurise-password-label a:hover { text-decoration: underline; }
+
+.edurise-password {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding-right: 12px;
+  border: 1px solid var(--edurise-border);
+  border-radius: 8px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.edurise-password:focus-within {
+  border-color: #278575;
+  box-shadow: 0 0 0 3px #2785751a;
+}
+
+.edurise-password input,
+.edurise-password input:focus {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.edurise-password button {
+  flex: 0 0 auto;
+  padding: 8px 0 8px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--edurise-teal);
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.edurise-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 3px;
+  padding: 15px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--edurise-teal);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 150ms ease, opacity 150ms ease;
+}
+
+.edurise-submit:hover { background: #12564d; }
+
+.edurise-submit:focus-visible,
+.edurise-tabs button:focus-visible,
+.edurise-password button:focus-visible {
+  outline: 3px solid #6cb7a7;
+  outline-offset: 3px;
+}
+
+.edurise-submit:disabled { cursor: wait; opacity: 0.65; }
+
+.edurise-error {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #f1c6c6;
+  border-radius: 8px;
+  background: #fff3f3;
+  color: #a52828;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.edurise-help {
+  margin: 24px 0 0;
+  color: var(--edurise-muted);
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.edurise-legal {
+  margin: 36px 0 0;
+  color: #99a6ad;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .edurise-page { grid-template-columns: minmax(0, 1fr); }
+  .edurise-intro { display: none; }
+  .edurise-login-area { min-height: 100vh; padding: 32px 24px; }
+  .edurise-mobile-brand { display: block; }
+}
+
+@media (max-width: 420px) {
+  .edurise-login-area { padding: 24px 18px; }
+  .edurise-login-card h2 { font-size: 27px; }
+  .edurise-tabs button { font-size: 12px; }
+}
